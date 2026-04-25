@@ -50,3 +50,15 @@ footer {
     text-align: center;
     padding: 20px;
 }
+img {
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
+nav a:hover {
+    color: #ffcc00;
+}
+
+section {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
