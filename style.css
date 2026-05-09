@@ -351,3 +351,29 @@ footer {
     position: relative;
     z-index: 10;
 }
+/* =========================
+   MINDMAP
+========================= */
+
+.mindmap-container {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.mindmap-container h3 {
+    margin-bottom: 15px;
+}
+
+.mindmap-img {
+    width: 100%;
+    max-width: 850px;
+    margin-top: 20px;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    transition: 0.3s ease;
+}
+
+.mindmap-img:hover {
+    transform: scale(1.02);
+}
