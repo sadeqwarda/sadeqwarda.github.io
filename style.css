@@ -366,12 +366,16 @@ footer {
 
 .mindmap-img {
     width: 100%;
-    max-width: 850px;
+    max-width: 750px;
+    max-height: 420px;
+    object-fit: contain;
     margin-top: 20px;
     border-radius: 18px;
     border: 1px solid var(--border);
     box-shadow: 0 10px 30px rgba(0,0,0,0.35);
     transition: 0.3s ease;
+    background: white;
+    padding: 10px;
 }
 
 .mindmap-img:hover {
