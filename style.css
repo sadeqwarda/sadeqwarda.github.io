@@ -248,28 +248,30 @@ footer {
 
 .top-btn {
     position: fixed;
-    bottom: 25px;
-    right: 25px;
-    width: 52px;
-    height: 52px;
-    background: var(--accent);
+    bottom: 35px;
+    right: 35px;
+    width: 58px;
+    height: 58px;
+    background: rgba(56, 189, 248, 0.95);
     color: #0f172a;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: bold;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
     transition: 0.3s ease;
+    z-index: 2000;
+    border: 2px solid rgba(255,255,255,0.15);
 }
 
 .top-btn:hover {
-    background: var(--accent-hover);
-    transform: translateY(-4px);
+    background: #0ea5e9;
+    color: white;
+    transform: translateY(-5px) scale(1.08);
 }
-
 /* =========================
    RESPONSIVE
 ========================= */
