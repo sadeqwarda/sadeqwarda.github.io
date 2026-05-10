@@ -430,3 +430,10 @@ footer {
 .projects-block {
     margin-top: 50px;
 }
+.section-subtitle {
+    margin-top: 35px;
+    margin-bottom: 25px;
+    color: var(--text);
+    font-size: 26px;
+    text-align: left;
+}
