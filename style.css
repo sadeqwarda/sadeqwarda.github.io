@@ -438,3 +438,60 @@ section {
     border-color: var(--accent);
     box-shadow: 0 12px 30px rgba(0,0,0,0.35);
 }
+.skills-category {
+    margin-top: 45px;
+}
+
+.skills-category h3 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 24px;
+    color: var(--text);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.skill-card {
+    min-height: 220px;
+    padding: 25px;
+    border-radius: 20px;
+    background:
+        linear-gradient(120deg, rgba(15, 23, 42, 0.98) 0%, rgba(15, 23, 42, 0.98) 48%, rgba(148, 163, 184, 0.25) 48%, rgba(148, 163, 184, 0.25) 100%);
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.skill-card h4 {
+    color: white;
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+
+.skill-card p {
+    color: white;
+    font-size: 15px;
+}
+
+.skill-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+}
+
+@media screen and (max-width: 1000px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
