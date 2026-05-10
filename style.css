@@ -389,3 +389,52 @@ footer {
 section {
     scroll-margin-top: 90px;
 }
+/* =========================
+   COMPÉTENCES EN CARTES
+========================= */
+
+.skills-category {
+    margin-top: 40px;
+}
+
+.skills-category h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--text);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+}
+
+.skill-card {
+    min-height: 230px;
+    padding: 25px;
+    border-radius: 18px;
+    background:
+        linear-gradient(120deg, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.95) 45%, rgba(148, 163, 184, 0.22) 45%, rgba(148, 163, 184, 0.22) 100%);
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: 0.3s ease;
+}
+
+.skill-card h4 {
+    color: var(--text);
+    font-size: 18px;
+    margin-bottom: 18px;
+}
+
+.skill-card p {
+    color: var(--text);
+    font-size: 15px;
+}
+
+.skill-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+}
