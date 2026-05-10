@@ -385,3 +385,26 @@ footer {
         font-size: 26px;
     }
 }
+.skill-card {
+    background: #1e293b !important;
+    background-image: none !important;
+    min-height: 190px;
+    padding: 28px;
+    border-radius: 18px;
+    border: 1px solid rgba(56,189,248,0.25);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.skill-card::before,
+.skill-card::after {
+    display: none !important;
+}
+
+.skill-card:hover {
+    background: #243449 !important;
+    transform: translateY(-6px);
+    border-color: #38bdf8;
+}
