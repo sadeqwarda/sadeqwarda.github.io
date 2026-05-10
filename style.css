@@ -431,9 +431,14 @@ footer {
     margin-top: 50px;
 }
 .section-subtitle {
-    margin-top: 35px;
-    margin-bottom: 25px;
-    color: var(--text);
-    font-size: 26px;
-    text-align: left;
+    font-size: 18px;
+    font-weight: 600;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    margin: 35px 0 20px;
+
+    padding-left: 14px;
+    border-left: 3px solid var(--accent);
 }
