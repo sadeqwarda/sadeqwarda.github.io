@@ -557,40 +557,62 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-  <script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
-const modal = document.getElementById("imageModal");
-const modalImg = document.getElementById("zoomedImg");
-const closeBtn = document.querySelector(".close-modal");
+    /* NAV ACTIVE */
+    const sections = document.querySelectorAll("section, header");
+    const navLinks = document.querySelectorAll("nav a");
 
-/* toutes les images zoomables */
-const zoomImages = document.querySelectorAll(".mindmap-img");
+    window.addEventListener("scroll", () => {
+        let current = "";
 
-zoomImages.forEach(img => {
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 130;
 
-    img.addEventListener("click", () => {
+            if (window.scrollY >= sectionTop) {
+                current = section.getAttribute("id");
+            }
+        });
 
-        modal.style.display = "flex";
-        modalImg.src = img.src;
+        navLinks.forEach(link => {
+            link.classList.remove("active-link");
 
+            if (link.getAttribute("href") === "#" + current) {
+                link.classList.add("active-link");
+            }
+        });
     });
 
-});
+    /* ZOOM IMAGES */
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("zoomedImg");
+    const closeBtn = document.querySelector(".close-modal");
+    const zoomImages = document.querySelectorAll(".mindmap-img");
 
-closeBtn.onclick = function () {
+    if (modal && modalImg && closeBtn && zoomImages.length > 0) {
 
-    modal.style.display = "none";
+        zoomImages.forEach(img => {
+            img.style.cursor = "zoom-in";
 
-};
+            img.addEventListener("click", function () {
+                modal.style.display = "flex";
+                modalImg.src = this.src;
+            });
+        });
 
-modal.onclick = function (e) {
+        closeBtn.addEventListener("click", function () {
+            modal.style.display = "none";
+        });
 
-    if (e.target === modal) {
-        modal.style.display = "none";
+        modal.addEventListener("click", function (e) {
+            if (e.target === modal) {
+                modal.style.display = "none";
+            }
+        });
     }
 
-};
-
+});
 </script>
 </body>
 </html>
