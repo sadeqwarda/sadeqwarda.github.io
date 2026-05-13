@@ -97,16 +97,19 @@
             et mon évolution vers le développement informatique.
         </p>
 
-        <img src="ma_carte_heuristique.png" alt="Carte heuristique" class="mindmap-img">
+        <img
+            src="ma_carte_heuristique.png"
+            alt="Carte heuristique"
+            class="mindmap-img"
+            id="mindmapImage">
     </div>
-    <div id="imageModal" class="image-modal">
-    <span class="close-modal">&times;</span>
-
-    <img class="modal-content" id="zoomedImg">
-
-</div>
 
 </section>
+
+<div id="imageModal" class="image-modal">
+    <span class="close-modal">&times;</span>
+    <img class="modal-content" id="zoomedImg">
+</div>
 
 <section id="formation-competences">
 
@@ -439,57 +442,56 @@
 </footer>
 
 <script>
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll("nav a");
+document.addEventListener("DOMContentLoaded", function () {
 
-window.addEventListener("scroll", () => {
-    let current = "";
+    const sections = document.querySelectorAll("section, header");
+    const navLinks = document.querySelectorAll("nav a");
 
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 120;
+    window.addEventListener("scroll", () => {
+        let current = "";
 
-        if (scrollY >= sectionTop) {
-            current = section.getAttribute("id");
-        }
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 130;
+
+            if (window.scrollY >= sectionTop) {
+                current = section.getAttribute("id");
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove("active-link");
+
+            if (link.getAttribute("href") === "#" + current) {
+                link.classList.add("active-link");
+            }
+        });
     });
 
-    navLinks.forEach(link => {
-        link.classList.remove("active-link");
+    const modal = document.getElementById("imageModal");
+    const img = document.getElementById("mindmapImage");
+    const modalImg = document.getElementById("zoomedImg");
+    const closeBtn = document.querySelector(".close-modal");
 
-        if (link.getAttribute("href") === "#" + current) {
-            link.classList.add("active-link");
-        }
-    });
-});
-</script>
-<script>
+    if (img && modal && modalImg && closeBtn) {
 
-const modal = document.getElementById("imageModal");
-const img = document.getElementById("mindmapImage");
-const modalImg = document.getElementById("zoomedImg");
-const closeBtn = document.querySelector(".close-modal");
+        img.addEventListener("click", function () {
+            modal.style.display = "flex";
+            modalImg.src = img.src;
+        });
 
-img.onclick = function () {
+        closeBtn.addEventListener("click", function () {
+            modal.style.display = "none";
+        });
 
-    modal.style.display = "flex";
-    modalImg.src = this.src;
-
-};
-
-closeBtn.onclick = function () {
-
-    modal.style.display = "none";
-
-};
-
-modal.onclick = function (e) {
-
-    if (e.target === modal) {
-        modal.style.display = "none";
+        modal.addEventListener("click", function (e) {
+            if (e.target === modal) {
+                modal.style.display = "none";
+            }
+        });
     }
 
-};
-
+});
 </script>
+
 </body>
 </html>
