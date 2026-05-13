@@ -563,10 +563,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const sections = document.querySelectorAll("section, header");
     const navLinks = document.querySelectorAll("nav a");
 
-    window.addEventListener("scroll", () => {
+    window.addEventListener("scroll", function () {
         let current = "";
 
-        sections.forEach(section => {
+        sections.forEach(function (section) {
             const sectionTop = section.offsetTop - 130;
 
             if (window.scrollY >= sectionTop) {
@@ -574,7 +574,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
-        navLinks.forEach(link => {
+        navLinks.forEach(function (link) {
             link.classList.remove("active-link");
 
             if (link.getAttribute("href") === "#" + current) {
@@ -591,7 +591,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (modal && modalImg && closeBtn && zoomImages.length > 0) {
 
-        zoomImages.forEach(img => {
+        zoomImages.forEach(function (img) {
             img.style.cursor = "zoom-in";
 
             img.addEventListener("click", function () {
@@ -613,5 +613,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 </script>
+
 </body>
 </html>
