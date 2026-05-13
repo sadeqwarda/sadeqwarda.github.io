@@ -643,3 +643,46 @@ nav a.active-link::after {
     color: var(--text-muted);
     line-height: 1.7;
 }
+/* Lien actif navbar */
+
+nav a.active-link {
+    color: var(--accent);
+}
+
+nav a.active-link::after {
+    width: 100%;
+}
+
+/* Zoom image */
+
+.image-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.modal-content {
+    max-width: 95%;
+    max-height: 90%;
+    border-radius: 16px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 25px;
+    right: 40px;
+    color: white;
+    font-size: 45px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.mindmap-img,
+.timeline-img {
+    cursor: zoom-in;
+}
