@@ -569,57 +569,64 @@ document.addEventListener("DOMContentLoaded", function () {
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* NAV ACTIVE */
-    const sections = document.querySelectorAll("section, header");
-    const navLinks = document.querySelectorAll("nav a");
+    /* =========================
+       NAV ACTIVE
+    ========================= */
 
-    window.addEventListener("scroll", function () {
+    const sections = document.querySelectorAll("header[id], section[id]");
+    const navLinks = document.querySelectorAll("nav a[href^='#']");
+
+    function activateNavLink() {
         let current = "";
 
-        sections.forEach(function (section) {
-            const sectionTop = section.offsetTop - 130;
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 160;
 
             if (window.scrollY >= sectionTop) {
                 current = section.getAttribute("id");
             }
         });
 
-        navLinks.forEach(function (link) {
+        navLinks.forEach(link => {
             link.classList.remove("active-link");
 
             if (link.getAttribute("href") === "#" + current) {
                 link.classList.add("active-link");
             }
         });
-    });
+    }
 
-    /* ZOOM IMAGES */
+    window.addEventListener("scroll", activateNavLink);
+    activateNavLink();
+
+
+    /* =========================
+       ZOOM IMAGES
+    ========================= */
+
     const modal = document.getElementById("imageModal");
     const modalImg = document.getElementById("zoomedImg");
     const closeBtn = document.querySelector(".close-modal");
-    const zoomImages = document.querySelectorAll(".mindmap-img");
+    const zoomImages = document.querySelectorAll(".mindmap-img, .timeline-img");
 
-    if (modal && modalImg && closeBtn && zoomImages.length > 0) {
+    zoomImages.forEach(img => {
+        img.style.cursor = "zoom-in";
 
-        zoomImages.forEach(function (img) {
-            img.style.cursor = "zoom-in";
-
-            img.addEventListener("click", function () {
-                modal.style.display = "flex";
-                modalImg.src = this.src;
-            });
+        img.addEventListener("click", function () {
+            modal.style.display = "flex";
+            modalImg.src = this.src;
         });
+    });
 
-        closeBtn.addEventListener("click", function () {
+    closeBtn.addEventListener("click", function () {
+        modal.style.display = "none";
+    });
+
+    modal.addEventListener("click", function (e) {
+        if (e.target === modal) {
             modal.style.display = "none";
-        });
-
-        modal.addEventListener("click", function (e) {
-            if (e.target === modal) {
-                modal.style.display = "none";
-            }
-        });
-    }
+        }
+    });
 
 });
 </script>
