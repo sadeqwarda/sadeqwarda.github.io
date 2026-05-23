@@ -375,33 +375,23 @@ article:hover {
 ========================= */
 
 .mindmap-container {
+    width: 100%;
     text-align: center;
-    margin-top: 35px;
+}
+
+.mindmap-container img,
+.mindmap-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .mindmap-img {
-    width: 100%;
-    max-width: 800px;
-
-    margin-top: 20px;
-
-    border-radius: 18px;
-
-    background: white;
-
-    padding: 10px;
-
-    border:
-        1px solid var(--border);
-
-    box-shadow:
-        0 10px 30px rgba(0,0,0,0.35);
-
-    transition: 0.3s ease;
-
-    cursor: zoom-in;
+    width: auto;
+    max-width: 100%;
+    max-height: 420px;
+    object-fit: contain;
 }
-
 .mindmap-img:hover {
     transform: scale(1.01);
 }
