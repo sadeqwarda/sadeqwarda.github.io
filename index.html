@@ -111,28 +111,25 @@
     <span class="close-modal">&times;</span>
     <img class="modal-content" id="zoomedImg">
 </div>
+
 <section id="parcours">
 
-    <!-- =========================
-     PARCOURS
-========================= -->
+    <div class="mindmap-container">
 
-<div class="mindmap-container">
+        <h2>Mon parcours</h2>
 
-    <h2>Mon parcours</h2>
+        <p>
+            Cette frise chronologique présente mon parcours
+            professionnel et mon évolution vers le développement informatique.
+        </p>
 
-    <p>
-        Cette frise chronologique présente mon parcours
-        professionnel et mon évolution vers le développement informatique.
-    </p>
+        <img
+            src="parcours_warda.jpg"
+            alt="Parcours de Warda Sadeq"
+            class="mindmap-img"
+            id="parcoursImage">
 
-    <img
-        src="parcours_warda.jpg"
-        alt="Parcours de Warda Sadeq"
-        class="mindmap-img"
-        id="parcoursImage">
-
-</div>
+    </div>
 
 </section>
 
@@ -326,13 +323,13 @@
     <div class="projects-grid">
 
         <a href="#mediatek86" class="project-thumbnail">
-            <img src="img/menu.jpg" alt="Projet MediaTek86">
+            <img src="menu.png" alt="Projet MediaTek86">
             <h3>Atelier 2 — MediaTek86</h3>
             <p>Application de gestion du personnel et des absences</p>
         </a>
 
         <a href="#immersion" class="project-thumbnail">
-           img src="test_civique.png" alt="Test civique">
+            <img src="test_civique.png" alt="Projet immersion service informatique">
             <h3>Immersion service informatique</h3>
             <p>Amélioration de l’application examens</p>
         </a>
@@ -360,7 +357,7 @@
 
         <div class="project-gallery">
             <figure>
-               <img src="connexion.png" alt="Écran de connexion MediaTek86">
+                <img src="connexion.png" alt="Écran de connexion MediaTek86">
                 <figcaption>Écran de connexion</figcaption>
             </figure>
 
@@ -375,7 +372,7 @@
             </figure>
 
             <figure>
-               <img src="absences.png" alt="Gestion des absences MediaTek86">
+                <img src="absences.png" alt="Gestion des absences MediaTek86">
                 <figcaption>Gestion des absences</figcaption>
             </figure>
         </div>
@@ -391,7 +388,8 @@
         </ul>
 
         <p>
-            🔗 <a href="https://github.com/sadeqwarda/MediaTek86" target="_blank">
+            🔗
+            <a href="https://github.com/sadeqwarda/MediaTek86" target="_blank">
                 Voir le projet sur GitHub
             </a>
         </p>
@@ -405,7 +403,49 @@
 
     </article>
 
+    <article class="project-card" id="immersion">
+
+        <h3>Immersion au sein du service informatique</h3>
+
+        <p>
+            Dans le cadre d’une immersion au sein du service informatique, j’ai participé
+            à un projet en cours visant l’amélioration d’une application de gestion
+            des examens.
+        </p>
+
+        <p>
+            Cette expérience m’a permis de découvrir le fonctionnement d’un service
+            informatique, de participer à l’analyse des besoins et de contribuer
+            à l’évolution d’une application métier utilisée dans un contexte professionnel.
+        </p>
+
+        <h4>Captures du projet</h4>
+
+        <div class="project-gallery">
+            <figure>
+                <img src="accueil.png" alt="Accueil de l’application examens">
+                <figcaption>Accueil de l’application</figcaption>
+            </figure>
+
+            <figure>
+                <img src="test_civique.png" alt="Écran test civique">
+                <figcaption>Test civique</figcaption>
+            </figure>
+        </div>
+
+        <h4>Compétences mobilisées</h4>
+
+        <ul>
+            <li>Analyse d’une application existante</li>
+            <li>Compréhension des besoins utilisateurs</li>
+            <li>Participation à l’amélioration d’une application métier</li>
+            <li>Découverte du fonctionnement d’un service informatique</li>
+        </ul>
+
+    </article>
+
 </section>
+
 <section id="experience">
 
     <h2>Parcours professionnel</h2>
@@ -549,10 +589,10 @@
 <footer>
     <p>© 2026 — Portfolio BTS SIO — Warda Sadeq</p>
 </footer>
+
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* NAV ACTIVE */
     const sections = document.querySelectorAll("header[id], section[id]");
     const navLinks = document.querySelectorAll("nav a[href^='#']");
 
@@ -579,18 +619,18 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("scroll", activateNavLink);
     activateNavLink();
 
-    /* ZOOM IMAGES */
     const modal = document.getElementById("imageModal");
     const modalImg = document.getElementById("zoomedImg");
     const closeBtn = document.querySelector(".close-modal");
-    const zoomImages = document.querySelectorAll(".mindmap-img, .timeline-img");
+    const zoomImages = document.querySelectorAll(".mindmap-img, .project-gallery img, .project-thumbnail img");
 
     if (modal && modalImg && closeBtn) {
 
         zoomImages.forEach(img => {
             img.style.cursor = "zoom-in";
 
-            img.addEventListener("click", function () {
+            img.addEventListener("click", function (e) {
+                e.preventDefault();
                 modal.style.display = "flex";
                 modalImg.src = this.src;
             });
