@@ -686,3 +686,64 @@ nav a.active-link::after {
 .timeline-img {
     cursor: zoom-in;
 }
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin: 30px 0 45px;
+}
+
+.project-thumbnail {
+    display: block;
+    background: #223044;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 18px;
+    overflow: hidden;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.project-thumbnail:hover {
+    transform: translateY(-6px);
+}
+
+.project-thumbnail img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.project-thumbnail h3,
+.project-thumbnail p {
+    padding: 0 20px;
+}
+
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin: 20px 0;
+}
+
+.project-gallery figure {
+    margin: 0;
+}
+
+.project-gallery img {
+    width: 100%;
+    border-radius: 12px;
+    display: block;
+}
+
+.project-gallery figcaption {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+video {
+    width: 100%;
+    border-radius: 12px;
+    margin-top: 15px;
+}
