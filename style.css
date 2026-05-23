@@ -1589,3 +1589,38 @@ video {
         grid-template-columns: 1fr;
     }
 }
+/* =========================
+   CENTRAGE IMAGES
+========================= */
+
+.mindmap-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    width: 100%;
+}
+
+.mindmap-img {
+    display: block;
+
+    margin: 25px auto;
+
+    max-width: 850px;
+    width: 100%;
+}
+
+/* Frise chronologique */
+
+#parcours .mindmap-container {
+    align-items: center;
+    justify-content: center;
+}
+
+#parcours .mindmap-img {
+    display: block;
+    margin: 25px auto;
+}
